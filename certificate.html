@@ -7,21 +7,35 @@
     <link rel="stylesheet" href="certificate.css">
 </head>
 <body>
-    <div class="border-pattern">
-        <div class="content">
-            <div class="inner-content">
-                <h1>Certificate</h1>
-                <h2>of Completion</h2>
-                <h3>This Certificate Is Proudly Presented To</h3>
-                <p>Muhammad Najmi Zulhusni Bin Mohd Sapuan</p>
-                <h3>Has Completed</h3>
-                <p>SchoolKids Learning Platform Quiz</p>
-                <h3>On</h3>
-                <p>June 28, 2024</p>
-                <div class="badge">
+    <div class="certificate-container">
+        <div class="left-section">
+            <form id="nameForm">
+                <label for="userName">Enter your name:</label>
+                <input type="text" id="userName" required>
+                <button type="submit" class="generate-button">Download Certificate</button>
+            </form>
+        </div>
+        <div class="certificate-preview">
+            <div class="border-pattern">
+                <div class="content">
+                    <div class="inner-content">
+                        <h1>CERTIFICATE</h1>
+                        <h2>OF COMPLETION</h2>
+                        <h3>THIS CERTIFICATE IS PROUDLY PRESENTED TO</h3>
+                        <p id="recipientName"></p>
+                        <h3>HAS COMPLETED</h3>
+                        <p>SchoolKids Learning Platform Quiz</p>
+                        <h3>ON</h3>
+                        <p id="completionDate"></p>
+                        <div class="badge"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="html2canvas.min.js"></script>
+    <script src="certificate.js"></script>
 </body>
 </html>
