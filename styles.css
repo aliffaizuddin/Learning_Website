@@ -276,26 +276,43 @@ body {
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    border-radius: 8px;
+    width: 80%; 
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    align-content: center;
+}
+
+.modal-content audio {
+    align-items: center;
+    padding-right: 10px;
+    margin-right: 20px; /* Push audio player to the right */
 }
 
 .close {
@@ -303,7 +320,6 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .close:hover,
@@ -312,6 +328,30 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-.incomplete {
-    border: 2px solid red;
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
+
+.input-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.age-options {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.age-options select {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #4caf50; /* Increased border width */
+    border-radius: 8px;
+    margin-left: 18px; /* Adjust margin for spacing */
+}
+
+
+

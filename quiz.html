@@ -6,6 +6,8 @@
     <title>SchoolKids Learning Platform</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="icon" href="Images/weblogo.jpg" type="image/jpg">
+
 </head>
 <body>
     <div class="header">
@@ -23,7 +25,14 @@
         </div>
         <div class="input-container">
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" placeholder="Enter your age">
+            <div class="age-options">
+                <select id="age" name="age">
+                    
+                    <option value="3">3 years old</option>
+                    <option value="4">4 years old</option>
+                    <option value="5">5 years old</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -102,14 +111,14 @@
         <p>The sun is a _____.</p>
         <input type="text" id="fill-blank-1" placeholder="Type your answer here" data-answer="star">
 
-        <p>What is 5 + 3? _____</p>
+        <p>What is 5 + 3? _</p>
         <input type="text" id="fill-blank-2" placeholder="Type your answer here" data-answer="8">
     </div>
 
     <!-- Trivia Section -->
     <div class="section" id="section-trivia">
         <h2>Trivia Questions</h2>
-        <div class="trivia-question">
+        <div class="trivia-question" data-answer="32">
             <p>How many teeth does an adult human have?</p>
             <div class="answer-options">
                 <label><input type="radio" name="teeth" value="32"> 32</label>
@@ -117,7 +126,7 @@
                 <label><input type="radio" name="teeth" value="36"> 36</label>
             </div>
         </div>
-        <div class="trivia-question">
+        <div class="trivia-question" data-answer="Elephant">
             <p>What is the largest known living land animal?</p>
             <div class="answer-options">
                 <label><input type="radio" name="land-animal" value="Elephant"> Elephant</label>
@@ -125,13 +134,31 @@
                 <label><input type="radio" name="land-animal" value="Blue Whale"> Blue Whale</label>
             </div>
         </div>
-        <div class="trivia-question">
+        <div class="trivia-question" data-answer="Mars">
             <p>Which planet is known as the Red Planet?</p>
             <div class="answer-options">
                 <label><input type="radio" name="red-planet" value="Venus"> Venus</label>
                 <label><input type="radio" name="red-planet" value="Mars"> Mars</label>
                 <label><input type="radio" name="red-planet" value="Jupiter"> Jupiter</label>
             </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You have completed all activities successfully!</p>
+            
+            <!-- Audio Player -->
+            <audio id="ending-sound">
+                <source src="Audio/ending.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <!-- Certificate Download Button -->
+            <button onclick="window.location.href='certificate.html'">Get Your Certificate</button>
         </div>
     </div>
 
@@ -143,8 +170,6 @@
             <div class="progress-bar" id="progress-bar" style="width: 0;"></div>
         </div>
         <p id="progress-text">0% Completed</p>
-        <!-- Certificate Button -->
-        <button onclick="window.location.href='certificate.html'" id="certificate-button" style="display: none;">Get Certificate</button>
     </div>
 
     <!-- Submit Section -->
@@ -153,21 +178,10 @@
         <button onclick="resetForm()" id="reset-button">Reset</button>
         <p id="submit-message"></p>
     </div>
-    <!-- Success Modal -->
-<div id="success-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" id="close-modal">&times;</span>
-        <h2>Congratulations!</h2>
-        <p>You have completed all activities successfully!</p>
-        <button onclick="window.location.href='certificate.html'">Get Your Certificate</button>
-    </div>
-</div>
-
 
     <!-- Footer -->
     <div class="footer">
         <p>&copy; 2024 SchoolKids LLC. All Rights Reserved. CGMA, Universiti Teknologi Malaysia</p>
-        <p>Web designers</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
