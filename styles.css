@@ -14,35 +14,14 @@ body {
     font-size: 20px;
     margin: 0;
     padding: 0;
-    background-color: rgba(30, 130, 143, 0.212);
-}
-
-.header {
-    font-family: "Kiddos";
-    font-size: 25px;
-    background-color: #100029;
-    color: #c8e6c9;
-    text-align: left;
-    padding: 5px; 
-}
-
-.header p {
-    font-family: "Kiddos";
-    font-size: 23px;
-    text-align: left;
-    color: #c8e6c9;
-}
-
-.header img {
-    float: left;
-    max-width: 300px; 
-    height: auto;
+    background-color: white;
 }
 
 #navbar {
     overflow: hidden;
     background-color: #1CC2CD;
     background-size: 7%;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -66,6 +45,27 @@ body {
     background-color: #1CC2CD;
     color: white;
 }
+.header {
+    background-color: #360F3E;
+    color: white;
+    padding: 20px 30px; 
+}
+.header h1 {
+    font-size: 40px;
+    font-family: "Kiddos";
+    text-align: left;
+}
+.header p {
+    font-size: 23px;
+    text-align: left;
+}
+
+.header img {
+    float: left;
+    max-width: 300px; 
+    height: auto;
+}
+
 
 /* others */
 
