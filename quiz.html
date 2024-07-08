@@ -11,6 +11,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<style>
+    .suggestions {
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 250px;
+        padding: 20px;
+        background-color: #71757a;
+        color: rgb(240, 169, 64);
+        border-radius: 8px 0 0 8px;
+        box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+    }
+    .suggestions h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    .suggestions ul {
+        list-style: none;
+        padding: 0;
+    }
+    .suggestions li {
+        margin: 10px 0;
+    }
+    .suggestions a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .suggestions a:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <div id="navbar">
     <a class="active" href="index1.html">Home</a>
     <a href="quiz.html">Quizzes</a>
@@ -91,7 +125,7 @@
         <p>Count how many sheep are in the image:</p>
         <div class="resize-container">
             <div class="resize">
-                <img src="Images/sheep_field.png" alt="Sheep Field" class="resizable" width="400" height="300" data-sheep-count="12">
+                <img src="Images/sheep_field.png" alt="Sheep Field" class="resizable" width="400" height="300" data-sheep-count="9">
             </div>
         </div>
         <div class="input-container">
@@ -189,6 +223,15 @@
         <p id="submit-message"></p>
     </div>
 
+    <div class="suggestions">
+        <h2>Try Out More Quizzes!</h2>
+        <ul>
+            <li><a href="https://www.cbc.ca/kids/quizzes" target="_blank">CBC Kids</a></li>
+            <li><a href="https://pbskids.org/games" target="_blank">PBS Kids</a></li>
+        </ul>
+    </div>
+    
+
     <!-- Footer -->
     <div class="footer">
         <p>&copy; 2024 Kids e-Learning | SECVH | Universiti Teknologi Malaysia</p>
@@ -197,5 +240,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="scripts.js"></script>
+
+
 </body>
 </html>
