@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Discussion| Kids e-Learning </title>
+    <title>Forum Discussion | Kids e-Learning</title>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Images/weblogo.jpg" type="image/jpg">
 
     <style>
-            @font-face {
+        @font-face {
             font-family: "Kiddos";
             src: url("Font/kiddos.ttf");
         }
@@ -81,13 +82,6 @@
             margin: 10px 0;
             font-size: 1.1em;
         }
-        
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 15px;
-            color: #eae9e9;
-        }
         .input-container {
             margin: 20px auto;
             max-width: 800px;
@@ -156,54 +150,54 @@
         <a href="resources.html">Book Link</a>
     </div>
 
-<div class="header">
-    <img src="Images/kids1.png" alt="SchoolKids" />
-    <h1>Welcome to the SchoolKids Learning Platform!</h1>
-    <p>Join forum discussions to share and learn about your kids together.</p>
-</div>
-
-<div id="opinion-list" class="opinion-container">
-    <!-- Example discussions (opinions) -->
-    <div class="opinion">
-        <p>I'm curious about everyone's experiences with their child's educational milestones. What was a recent achievement or challenge your child faced in school?</p>
+    <div class="header">
+        <img src="Images/kids1.png" alt="SchoolKids" />
+        <h1>Welcome to the SchoolKids Learning Platform!</h1>
+        <p>Join forum discussions to share and learn about your kids together.</p>
     </div>
-    <div class="opinion">
-        <p>My son just started reading independently, and it's been a joy to see his confidence grow. How are your kids adapting to new learning challenges?</p>
+
+    <div id="opinion-list" class="opinion-container">
+        <!-- Example discussions (opinions) -->
+        <div class="opinion">
+            <p>I'm curious about everyone's experiences with their child's educational milestones. What was a recent achievement or challenge your child faced in school?</p>
+        </div>
+        <div class="opinion">
+            <p>My son just started reading independently, and it's been a joy to see his confidence grow. How are your kids adapting to new learning challenges?</p>
+        </div>
+        <div class="opinion">
+            <p>My daughter has been shy lately. Any advice on helping children overcome social challenges and build friendships?</p>
+        </div>
     </div>
-    <div class="opinion">
-        <p>My daughter has been shy lately. Any advice on helping children overcome social challenges and build friendships?</p>
+
+    <div class="input-container">
+        <label for="opinion-input">Share your opinion:</label>
+        <textarea id="opinion-input" rows="4" placeholder="Type your opinion here"></textarea>
+        <button onclick="submitOpinion()" class="submit-button">Submit</button>
     </div>
-</div>
 
-<div class="input-container">
-    <label for="opinion-input">Share your opinion:</label>
-    <textarea id="opinion-input" rows="4" placeholder="Type your opinion here"></textarea>
-    <button onclick="submitOpinion()" class="submit-button">Submit</button>
-</div>
+    <div class="footer">
+        <p>&copy; 2024 Kids e-Learning | SECVH | Universiti Teknologi Malaysia</p>
+    </div>
 
-<div class="footer">
-    <p>&copy; 2024 SchoolKids Learning Platform. All rights reserved.</p>
-</div>
+    <script>
+        function submitOpinion() {
+            var opinion = document.getElementById("opinion-input").value;
+            if (opinion.trim() === "") {
+                alert("Please enter your opinion.");
+                return;
+            }
 
-<script>
-    function submitOpinion() {
-        var opinion = document.getElementById("opinion-input").value;
-        if (opinion.trim() === "") {
-            alert("Please enter your opinion.");
-            return;
+            var opinionItem = document.createElement("div");
+            opinionItem.classList.add("opinion");
+            opinionItem.innerHTML = "<p>" + opinion + "</p>";
+
+            var opinionList = document.getElementById("opinion-list");
+            opinionList.appendChild(opinionItem);
+
+            // Clear input after submission
+            document.getElementById("opinion-input").value = "";
         }
-
-        var opinionItem = document.createElement("div");
-        opinionItem.classList.add("opinion");
-        opinionItem.innerHTML = "<p>" + opinion + "</p>";
-
-        var opinionList = document.getElementById("opinion-list");
-        opinionList.appendChild(opinionItem);
-
-        // Clear input after submission
-        document.getElementById("opinion-input").value = "";
-    }
-</script>
+    </script>
 
 </body>
 </html>
