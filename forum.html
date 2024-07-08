@@ -146,6 +146,12 @@
             border-radius: 8px;
         }
     </style>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -163,16 +169,7 @@
     </div>
 
     <div id="opinion-list" class="opinion-container">
-        <!-- Example discussions (opinions) -->
-        <div class="opinion">
-            <p>I'm curious about everyone's experiences with their child's educational milestones. What was a recent achievement or challenge your child faced in school?</p>
-        </div>
-        <div class="opinion">
-            <p>My son just started reading independently, and it's been a joy to see his confidence grow. How are your kids adapting to new learning challenges?</p>
-        </div>
-        <div class="opinion">
-            <p>My daughter has been shy lately. Any advice on helping children overcome social challenges and build friendships?</p>
-        </div>
+        <!-- Opinions will be dynamically added here -->
     </div>
 
     <div class="input-container">
@@ -186,6 +183,21 @@
     </div>
 
     <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJwB0Q6_5ZmLo3y6R06A0SvZ5TZF-xEZo",
+            authDomain: "learningwebsite-81d00.firebaseapp.com",
+            databaseURL: "https://learningwebsite-81d00-default-rtdb.firebaseio.com/",
+            projectId: "learningwebsite-81d00",
+            storageBucket: "learningwebsite-81d00.appspot.com",
+            messagingSenderId: "155101543064",
+            appId: "1:155101543064:web:32fa4fda599e68c4572eed",
+            measurementId: "G-V87XN3BFN0"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
         function submitOpinion() {
             var opinion = document.getElementById("opinion-input").value;
             if (opinion.trim() === "") {
@@ -193,17 +205,38 @@
                 return;
             }
 
+            // Reference to your Firebase Realtime Database
+            var database = firebase.database();
+            
+            // Push new opinion to the database
+            database.ref('opinions/').push({
+                opinion: opinion
+            }).then(function() {
+                // Add the opinion to the DOM
+                var opinionItem = document.createElement("div");
+                opinionItem.classList.add("opinion");
+                opinionItem.innerHTML = "<p>" + opinion + "</p>";
+
+                var opinionList = document.getElementById("opinion-list");
+                opinionList.appendChild(opinionItem);
+
+                // Clear input after submission
+                document.getElementById("opinion-input").value = "";
+            }).catch(function(error) {
+                console.error("Error writing new opinion to Firebase Database", error);
+            });
+        }
+
+        // Listen for changes in the 'opinions' node
+        firebase.database().ref('opinions/').on('child_added', function(snapshot) {
+            var opinion = snapshot.val().opinion;
             var opinionItem = document.createElement("div");
             opinionItem.classList.add("opinion");
             opinionItem.innerHTML = "<p>" + opinion + "</p>";
 
             var opinionList = document.getElementById("opinion-list");
             opinionList.appendChild(opinionItem);
-
-            // Clear input after submission
-            document.getElementById("opinion-input").value = "";
-        }
+        });
     </script>
-
 </body>
 </html>
