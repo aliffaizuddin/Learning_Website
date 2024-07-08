@@ -195,48 +195,42 @@
             measurementId: "G-V87XN3BFN0"
         };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
 
-        function submitOpinion() {
-            var opinion = document.getElementById("opinion-input").value;
-            if (opinion.trim() === "") {
-                alert("Please enter your opinion.");
-                return;
-            }
+function submitOpinion() {
+    var opinion = document.getElementById("opinion-input").value;
+    if (opinion.trim() === "") {
+        alert("Please enter your opinion.");
+        return;
+    }
 
-            // Reference to your Firebase Realtime Database
-            var database = firebase.database();
-            
-            // Push new opinion to the database
-            database.ref('opinions/').push({
-                opinion: opinion
-            }).then(function() {
-                // Add the opinion to the DOM
-                var opinionItem = document.createElement("div");
-                opinionItem.classList.add("opinion");
-                opinionItem.innerHTML = "<p>" + opinion + "</p>";
+    // Reference to your Firebase Realtime Database
+    var database = firebase.database();
+    
+    // Push new opinion to the database
+    database.ref('opinions/').push({
+        opinion: opinion
+    }).then(function() {
+        console.log("Opinion successfully submitted to Firebase");
+        
+        // Clear input after submission
+        document.getElementById("opinion-input").value = "";
+    }).catch(function(error) {
+        console.error("Error writing new opinion to Firebase Database", error);
+    });
+}
 
-                var opinionList = document.getElementById("opinion-list");
-                opinionList.appendChild(opinionItem);
+// Listen for changes in the 'opinions' node
+firebase.database().ref('opinions/').on('child_added', function(snapshot) {
+    var opinion = snapshot.val().opinion;
+    var opinionItem = document.createElement("div");
+    opinionItem.classList.add("opinion");
+    opinionItem.innerHTML = "<p>" + opinion + "</p>";
 
-                // Clear input after submission
-                document.getElementById("opinion-input").value = "";
-            }).catch(function(error) {
-                console.error("Error writing new opinion to Firebase Database", error);
-            });
-        }
-
-        // Listen for changes in the 'opinions' node
-        firebase.database().ref('opinions/').on('child_added', function(snapshot) {
-            var opinion = snapshot.val().opinion;
-            var opinionItem = document.createElement("div");
-            opinionItem.classList.add("opinion");
-            opinionItem.innerHTML = "<p>" + opinion + "</p>";
-
-            var opinionList = document.getElementById("opinion-list");
-            opinionList.appendChild(opinionItem);
-        });
+    var opinionList = document.getElementById("opinion-list");
+    opinionList.appendChild(opinionItem);
+});
     </script>
 </body>
 </html>
