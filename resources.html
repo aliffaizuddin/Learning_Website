@@ -173,33 +173,86 @@
     </div>
 
     <script>
+        // Predefined book suggestions
+        var fairyTaleBooks = [
+            { title: 'Cinderella', author: 'Charles Perrault', link: 'https://www.example.com/cinderella' },
+            { title: 'Snow White', author: 'Brothers Grimm', link: 'https://www.example.com/snow-white' },
+            { title: 'Beauty and the Beast', author: 'Gabrielle-Suzanne Barbot de Villeneuve', link: 'https://www.example.com/beauty-and-the-beast' },
+            { title: 'The Little Mermaid', author: 'Hans Christian Andersen', link: 'https://www.example.com/little-mermaid' },
+            { title: 'Rapunzel', author: 'Brothers Grimm', link: 'https://www.example.com/rapunzel' }
+        ];
+
+        var barbieBooks = [
+            { title: 'Barbie and the Diamond Castle', author: 'Golden Books', link: 'https://www.example.com/diamond-castle' },
+            { title: 'Barbie Fairytopia', author: 'Golden Books', link: 'https://www.example.com/fairytopia' },
+            { title: 'Barbie as the Princess and the Pauper', author: 'Golden Books', link: 'https://www.example.com/princess-pauper' },
+            { title: 'Barbie in a Mermaid Tale', author: 'Golden Books', link: 'https://www.example.com/mermaid-tale' },
+            { title: 'Barbie Mariposa and Her Butterfly Fairy Friends', author: 'Golden Books', link: 'https://www.example.com/mariposa' }
+        ];
+
+        // Display predefined book suggestions on page load
+        window.onload = function() {
+            var bookLinksContainer = document.getElementById('bookLinksContainer');
+            var noResults = document.getElementById('noResults');
+            displayPredefinedBooks(fairyTaleBooks); // Display fairy tale books by default
+            noResults.style.display = 'none'; // Hide no results message initially
+        };
+
+        // Function to display predefined book suggestions
+        function displayPredefinedBooks(books) {
+            var bookLinksContainer = document.getElementById('bookLinksContainer');
+            var noResults = document.getElementById('noResults');
+
+            if (books.length > 0) {
+                books.forEach(book => {
+                    var link = document.createElement('div');
+                    link.classList.add('link-container');
+                    link.innerHTML = '<a href="' + book.link + '" target="_blank">' + book.title + ' - ' + book.author + '</a>';
+                    bookLinksContainer.appendChild(link);
+                });
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
+        }
+
+        // Function to search for books using Google Books API
         function searchBooks() {
             var input = document.getElementById('searchInput').value.toLowerCase();
             var bookLinksContainer = document.getElementById('bookLinksContainer');
             var noResults = document.getElementById('noResults');
             var apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + input + '+subject:children';
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.items && data.items.length > 0) {
-                        bookLinksContainer.innerHTML = ''; // Clear previous results
-                        data.items.forEach(item => {
-                            var bookInfo = item.volumeInfo;
-                            var link = document.createElement('div');
-                            link.classList.add('link-container');
-                            link.innerHTML = '<a href="' + bookInfo.previewLink + '" target="_blank">' + bookInfo.title + ' - ' + (bookInfo.authors ? bookInfo.authors.join(', ') : 'Unknown Author') + '</a>';
-                            bookLinksContainer.appendChild(link);
-                        });
-                        noResults.style.display = 'none';
-                    } else {
-                        bookLinksContainer.innerHTML = ''; // Clear previous results
-                        noResults.style.display = 'block';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching books:', error);
-                });
+            // Predefined book suggestions based on specific keywords or categories
+            if (input.includes('fairy tale')) {
+                bookLinksContainer.innerHTML = ''; // Clear previous results
+                displayPredefinedBooks(fairyTaleBooks);
+            } else if (input.includes('barbie')) {
+                bookLinksContainer.innerHTML = ''; // Clear previous results
+                displayPredefinedBooks(barbieBooks);
+            } else {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.items && data.items.length > 0) {
+                            bookLinksContainer.innerHTML = ''; // Clear previous results
+                            data.items.forEach(item => {
+                                var bookInfo = item.volumeInfo;
+                                var link = document.createElement('div');
+                                link.classList.add('link-container');
+                                link.innerHTML = '<a href="' + bookInfo.previewLink + '" target="_blank">' + bookInfo.title + ' - ' + (bookInfo.authors ? bookInfo.authors.join(', ') : 'Unknown Author') + '</a>';
+                                bookLinksContainer.appendChild(link);
+                            });
+                            noResults.style.display = 'none';
+                        } else {
+                            bookLinksContainer.innerHTML = ''; // Clear previous results
+                            noResults.style.display = 'block';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching books:', error);
+                    });
+            }
         }
     </script>
 
