@@ -1,15 +1,16 @@
-# SchoolKids Learning Platform
+# Kids e-Learining Platform
 
-Welcome to the SchoolKids Learning Platform! This platform provides interactive activities for parents and their kids to learn about various parental topics, including quizzes, forum discussion, content, and book page.
+Welcome to the Kids e-Learining Platform! Explore interactive activities to enhance learning for children. Choose from a variety of engaging options to suit your child's interests.
 
-## Features
+## Features 
 
-- **Interactive Quizzes**: Engage in quizzes about planets, animals, lunar phases, and the periodic table.
-- **Content Video**: Practice placing planets in orbits, animals in habitats, and sorting lunar phases.
-- **Forum Discussion**: Explore and resize diagrams of plant and animal cells.
-- **Book Page**: Submit quiz answers and reset the platform for a new session.
+- **Home**: Serves as a navigational hub providing access to various sections of the e-learning platform.
+- **Interactive Quizzes**: Engage in educational quizzes covering topics such as planets, animals, and lunar phases. 
+- **Forum Discussion**: Participate in forum discussions where users can share experiences and insights related to educational milestones, challenges in learning, and tips for child development. 
+- **Various Sharing**: Learn educational content related to topics like planets, animals, and lunar phases via media like Youtube videos.
+- **Book Links**: Provide additional reading materials and references for users interested in exploring educational content 
 
-## Name
+## Group Members 
 
 - Muhammad Najmi Zulhusni Bin Mohd Sapuan
 - Aliff Aizuddin Bin Abdul Aziz
