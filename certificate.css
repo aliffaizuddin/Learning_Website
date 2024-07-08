@@ -3,6 +3,35 @@
     margin: 0;
 }
 
+#navbar {
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #0e0a0a;
+    font-size: 17px;
+    padding: 10px 16px; /* Adjust padding for better spacing */
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background-color: #4f0bec63;
+    color: black;
+}
+
+#navbar a.active {
+    background-color: #1CC2CD;
+    color: white;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -33,7 +62,7 @@ body {
 }
 
 .generate-button {
-    background-color: #4caf50;
+    background-color: #2698ac;
     color: white;
     padding: 10px 10px 10px 10px; 
     border: none;
@@ -45,7 +74,7 @@ body {
 }
 
 .generate-button:hover {
-    background-color: #45a049;
+    background-color: #248da0;
 }
 
 .certificate-preview {
@@ -59,6 +88,7 @@ body {
     width: 100%;
     max-width: 267mm;
     height: auto;
+    padding-top: 10px;
     border: 1mm solid white;
     background-color: white;
     padding: 10mm;
@@ -70,7 +100,7 @@ body {
 
 .content {
     width: 100%;
-    border: 1mm solid #4caf50;
+    border: 2mm solid #1CC2CD;
     background: white;
     padding: 10mm;
     box-sizing: border-box;
@@ -92,14 +122,14 @@ h2 {
     margin-top: 0;
     padding-bottom: 1mm;
     display: inline-block;
-    border-bottom: 1mm solid #4caf50;
+    border-bottom: 1mm solid #1CC2CD;
 }
 
 h2::after {
     content: "";
     display: block;
     padding-bottom: 4mm;
-    border-bottom: 1mm solid #4caf50;
+    border-bottom: 1mm solid #1CC2CD;
 }
 
 h3 {
@@ -119,22 +149,6 @@ p {
     vertical-align: middle;
 }
 
-.download-button {
-    background-color: #2196f3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.download-button:hover {
-    background-color: #0b7dda;
-}
 
 .badge {
     width: 20mm;

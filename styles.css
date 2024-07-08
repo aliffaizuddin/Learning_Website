@@ -1,5 +1,6 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 @font-face {
@@ -36,28 +37,71 @@
 body {
     font-family: "Patrick Hand", cursive;
     background: #4caf50;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* navigation bar */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+>>>>>>> Stashed changes
     margin: 0;
     padding: 0;
+    background-color: #fdebc4;;
 }
 
 .header {
-    text-align: center;
-    background: #4caf50;
-    color: white;
-    padding: 50px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 3.0em;
+    font-family: "Bona Nova SC", serif;
+    font-size: 25px;
+    background-color: #100029;
+    color: #c8e6c9;
+    text-align: left;
+    padding: 10px;
 }
 
 .header p {
-    font-size: 1.2em;
-    margin: 10px 0 0;
+    font-family: "Bona Nova SC", serif;
+    font-size: 20px;
+    text-align: left;
+    color: #c8e6c9;
 }
 
-/* Added styles for the personal information section */
+.header img {
+    float: left;
+    max-width: 300px; 
+    
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #1CC2CD;
+    background-size: 7%;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar a.active {
+    background-color: #1CC2CD;
+    color: white;
+}
+
+/* others */
+
+/* Personal Information section */
 .input-container {
     margin-bottom: 15px;
 }
@@ -65,14 +109,14 @@ body {
 .input-container label {
     display: block;
     margin-bottom: 5px;
-    color: #4caf50;
+    color: #F2CA70;
     font-weight: bold;
 }
 
 .input-container input {
     width: 775px;
     padding: 10px;
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     border-radius: 8px;
     font-size: 1em;
 }
@@ -88,7 +132,7 @@ body {
 
 .section h2 {
     text-align: center;
-    color: #4caf50;
+    color: #F2CA70;
 }
 
 .section p {
@@ -118,7 +162,7 @@ body {
 .orbit, .habitat, .sound {
     width: 150px;
     height: 100px;
-    border: 2px dashed #4caf50;
+    border: 2px dashed #F2CA70;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,11 +172,11 @@ body {
 
 .orbit.correct, .habitat.correct, .sound.correct {
     background: #c8e6c9;
-    border: 2px solid #2e7d32;
+    border: 2px solid #F2CA70;
 }
 
 .resize img {
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     border-radius: 8px;
 }
 
@@ -147,7 +191,7 @@ body {
 .sortable-item {
     background: #e8f5e9;
     padding: 10px;
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     border-radius: 8px;
     cursor: move;
     text-align: center;
@@ -155,7 +199,7 @@ body {
 }
 
 .element {
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     background: #e8f5e9;
     padding: 10px;
     text-align: center;
@@ -165,14 +209,14 @@ body {
 
 .element.correct {
     background: #c8e6c9;
-    border: 2px solid #2e7d32;
+    border: 2px solid #F2CA70;
 }
 
 #datepicker {
     display: block;
     margin: 0 auto;
     padding: 10px;
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     border-radius: 8px;
     width: 200px;
     text-align: center;
@@ -189,7 +233,7 @@ body {
     padding: 10px 20px;
     border: none;
     background: white;
-    color: #388e3c;
+    color: #F2CA70;
     cursor: pointer;
     font-size: 1em;
     border-radius: 8px;
@@ -197,7 +241,7 @@ body {
 }
 
 #submit-button:hover, #reset-button:hover {
-    background: #388e3c;
+    background: #F2CA70;
     color: white;
 }
 
@@ -223,7 +267,7 @@ body {
     width: 60%;
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid #4caf50;
+    border: 2px solid #F2CA70;
     border-radius: 8px;
     font-size: 1em;
 }
@@ -239,7 +283,7 @@ body {
 
 .progress-bar {
     height: 20px;
-    background: #4caf50;
+    background: #F2CA70;
     width: 0;
     transition: width 0.3s;
 }
@@ -248,7 +292,7 @@ body {
     text-align: center;
     margin-top: 10px;
     font-size: 1.1em;
-    color: #4caf50;
+    color: #F2CA70;
 }
 
 /* Trivia Section */
@@ -295,16 +339,11 @@ body {
 
 .progress-bar {
     height: 20px;
-    background: #4caf50;
+    background: #F2CA70;
     width: 0;
     transition: width 0.3s;
 }
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 15px;
-    color: #eae9e9;
-}
+
 
 /* Modal Styles */
 .modal {
@@ -332,7 +371,7 @@ body {
 .modal-content button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4caf50;
+    background-color: #F2CA70;
     color: white;
     border: none;
     cursor: pointer;
@@ -344,7 +383,7 @@ body {
 .modal-content audio {
     align-items: center;
     padding-right: 10px;
-    margin-right: 20px; /* Push audio player to the right */
+    margin-right: 20px; 
 }
 
 .close {
@@ -374,16 +413,21 @@ body {
 
 .age-options {
     display: flex;
-    align-items: center; /* Align items vertically */
+    align-items: center; 
 }
 
 .age-options select {
     padding: 8px;
     font-size: 16px;
-    border: 2px solid #4caf50; /* Increased border width */
+    border: 2px solid #F2CA70; 
     border-radius: 8px;
-    margin-left: 18px; /* Adjust margin for spacing */
+    margin-left: 16px; 
 }
 
-
-
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #eae9e9;
+    background-color: #100029;
+}
