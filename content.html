@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Sharing | Kids e-Learning </title>
+    <title>Content Sharing | Kids e-Learning</title>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Images/weblogo.jpg" type="image/jpg">
@@ -148,35 +148,86 @@
     </div>
 
     <div class="section">
-    <h2>Content Sharing</h2>
-    <p>Discover resources and contribute your own content.</p>
+        <h2>Content Sharing</h2>
+        <p>Discover resources and contribute your own content.</p>
 
-    <!-- Example content items -->
-    <div class="content-item">
-        <h3>Entertainment</h3>
-        <p>Didi & Friends</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/6_4cH3hA4ik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Example content items -->
+        <div class="content-item" id="entertainment">
+            <h3>Entertainment</h3>
+            <p>Didi & Friends</p>
+            <div id="entertainment-player"></div>
+        </div>
+
+        <div class="content-item" id="science">
+            <h3>Science</h3>
+            <p>Solar System</p>
+            <div id="science-player"></div>
+        </div>
+
+        <div class="content-item" id="math">
+            <h3>Math</h3>
+            <p>Basic Numbers in Daily Life</p>
+            <div id="math-player"></div>
+        </div>
+
+        <div class="button-container">
+            <a href="content2.html" class="big-button">Explore More Content</a>
+        </div>
     </div>
 
-    <div class="content-item">
-        <h3>Science</h3>
-        <p>Solar System</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/EB6FXDSTzhw?si=AMUTTLZpsbn0HvNz&amp;start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
-
-    <div class="content-item">
-        <h3>Math</h3>
-        <p>Basic Numbers in Daily Life</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Sj3X28r9oUU?si=YlxHXRDvH0IbswhU&amp;start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
-
-    <div class="button-container">
-        <a href="content2.html" class="big-button">Explore More Content</a>
+    <div class="footer">
+        <p>&copy; 2024 Kids e-Learning | SECVH | Universiti Teknologi Malaysia</p>
     </div>
 
-</div>
+    <!-- Load YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
 
-<div class="footer">
-    <p>&copy; 2024 Kids e-Learning | SECVH | Universiti Teknologi Malaysia</p>
-</div>
+    <script>
+        // This function creates an <iframe> (and YouTube player) after the API code downloads.
+        function onYouTubeIframeAPIReady() {
+            // Entertainment Video
+            new YT.Player('entertainment-player', {
+                height: '315',
+                width: '560',
+                videoId: '6_4cH3hA4ik',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
 
+            // Science Video
+            new YT.Player('science-player', {
+                height: '315',
+                width: '560',
+                videoId: 'EB6FXDSTzhw',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+
+            // Math Video
+            new YT.Player('math-player', {
+                height: '315',
+                width: '560',
+                videoId: 'Sj3X28r9oUU',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            console.log("Player Ready");
+        }
+
+        // The API calls this function when the player's state changes.
+        function onPlayerStateChange(event) {
+            console.log("Player State Changed", event.data);
+        }
+    </script>
 </body>
 </html>
