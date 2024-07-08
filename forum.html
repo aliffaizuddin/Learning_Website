@@ -87,8 +87,8 @@
             margin: 20px auto;
             max-width: 800px;
             padding: 20px;
-            background: #000;
-            color: #fff;
+            background: #fff;
+            color: #000;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border-radius: 8px;
             text-align: left;
@@ -96,19 +96,20 @@
         .input-container label {
             display: block;
             margin-bottom: 5px;
-            color: #4caf50;
+            color: #000;
             font-weight: bold;
         }
         .input-container textarea {
             width: 100%;
             padding: 10px;
-            border: 2px solid #4caf50;
+            border: 2px solid #000; /* Changed border color to black */
             border-radius: 8px;
             font-size: 1em;
             resize: vertical;
             font-family: "Kiddos";
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
+            margin-right: 30px;
         }
         .submit-button {
             background-color: #000;
@@ -174,7 +175,7 @@
     </div>
 
     <div class="input-container">
-        <label for="opinion-input">Share your opinion:</label>
+        <label for="opinion-input" style="color: black;">Share your opinion:</label>
         <textarea id="opinion-input" rows="4" placeholder="Type your opinion here"></textarea>
         <button onclick="submitOpinion()" class="submit-button">Submit</button>
     </div>
