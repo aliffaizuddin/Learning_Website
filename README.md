@@ -10,7 +10,7 @@ Welcome to the Kids e-Learining Platform! Explore interactive activities to enha
 - **Various Sharing**: Learn educational content related to topics like planets, animals, and lunar phases via media like Youtube videos.
 - **Book Links**: Provide additional reading materials and references for users interested in exploring educational content.
 
-## Group Members 
+## Group 2 Members 
 
 - Muhammad Najmi Zulhusni Bin Mohd Sapuan (A21EC0207)
 - Aliff Aizuddin Bin Abdul Aziz (A21EC0012)
