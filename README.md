@@ -16,3 +16,15 @@ Welcome to the Kids e-Learining Platform! Explore interactive activities to enha
 - Aliff Aizuddin Bin Abdul Aziz (A21EC0012)
 - Misya Syafiqah Binti Mohd Safian (A21EC0199)
 - Nor Alya Binti Mohamad Nor (A21EC0105)
+
+
+## How to run our program:
+1. Allow Apache on XAMPP Control Panel
+2. Details of the pages:
+   Home Page - index1.html
+   Quizzes Page - quiz.html
+   Certificate Page - certificate.html
+   Forum Discussion Page - forum.html
+   Content Sharing Page - content.html & content2.html
+   Book Link Page - resources.html
+   
