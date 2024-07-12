@@ -1,6 +1,6 @@
 # Kids e-Learining Platform
 
-Welcome to the Kids e-Learining Platform! Explore interactive activities to enhance learning for children. Choose from a variety of engaging options to suit your child's interests.
+Welcome to the Kids e-Learining Platform! Explore interactive activities to enhance learning for children from age 6 years old to 10 years old. Choose from a variety of engaging options to suit your child's interests.
 
 ## Features 
 
@@ -8,11 +8,11 @@ Welcome to the Kids e-Learining Platform! Explore interactive activities to enha
 - **Interactive Quizzes**: Engage in educational quizzes covering topics such as planets, animals, and lunar phases. 
 - **Forum Discussion**: Participate in forum discussions where users can share experiences and insights related to educational milestones, challenges in learning, and tips for child development. 
 - **Various Sharing**: Learn educational content related to topics like planets, animals, and lunar phases via media like Youtube videos.
-- **Book Links**: Provide additional reading materials and references for users interested in exploring educational content 
+- **Book Links**: Provide additional reading materials and references for users interested in exploring educational content.
 
 ## Group Members 
 
-- Muhammad Najmi Zulhusni Bin Mohd Sapuan
-- Aliff Aizuddin Bin Abdul Aziz
-- Misya Syafiqah Binti Mohd Safian
-- Nor Alya Binti Mohamad Nor
+- Muhammad Najmi Zulhusni Bin Mohd Sapuan (A21EC0207)
+- Aliff Aizuddin Bin Abdul Aziz (A21EC0012)
+- Misya Syafiqah Binti Mohd Safian (A21EC0199)
+- Nor Alya Binti Mohamad Nor (A21EC0105)
