@@ -4,8 +4,8 @@
 @font-face {
     font-family: "Kiddos";
     src: url("Font/kiddos.ttf");
-    }
-    
+}
+
 /* navigation bar */
 
 body {
@@ -65,10 +65,9 @@ body {
     height: auto;
 }
 
-
 /* others */
 
-/* Personal Information section */
+/* personal information section */
 .input-container {
     margin-bottom: 15px;
 }
@@ -224,19 +223,19 @@ body {
     color: white;
 }
 
-/* New CSS for Fill in the Blank Section */
-#section-fill-blank {
+/* CSS for Sheep Section */
+#section-resize {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#section-fill-blank p {
+#section-resize p {
     text-align: center;
     font-size: 1.2em;
 }
 
-#section-fill-blank input {
+#section-resize select {
     font-family: "Patrick Hand", cursive;
     width: 60%;
     padding: 10px;
@@ -246,7 +245,44 @@ body {
     font-size: 1em;
 }
 
-/* Progress Tracking Styles */
+#section-sort {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section-sort p {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#section-sort .sortable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section-sort .sortable {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#section-sort .sortable-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#section-sort .moon-phase {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
 .progress-container {
     width: 80%;
     background: #e0e0e0;
@@ -301,23 +337,6 @@ body {
 .answer-options input {
     margin-right: 5px;
 }
-
-/* Progress Tracking Styles */
-.progress-container {
-    width: 80%;
-    background: #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 20px auto;
-}
-
-.progress-bar {
-    height: 20px;
-    background: #F2CA70;
-    width: 0;
-    transition: width 0.3s;
-}
-
 
 /* Modal Styles */
 .modal {
@@ -407,3 +426,19 @@ body {
     text-align: center;
     font-size: 15px;
 }
+
+/* Existing CSS styles */
+#section-fill-blank {
+    text-align: center;
+}
+
+#section-fill-blank .blank {
+    border: none;
+    border-bottom: 2px solid #F2CA70;
+    padding: 5px;
+    font-size: 1em;
+    text-align: center;
+    width: 80px;
+    margin: 0 5px;
+}
+

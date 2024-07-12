@@ -71,10 +71,11 @@
             <label for="age">Age:</label>
             <div class="age-options">
                 <select id="age" name="age">
-                    
-                    <option value="3">3 years old</option>
-                    <option value="4">4 years old</option>
-                    <option value="5">5 years old</option>
+                    <option value="3">6 years old</option>
+                    <option value="4">7 years old</option>
+                    <option value="5">8 years old</option>
+                    <option value="5">9 years old</option>
+                    <option value="5">10 years old</option>
                 </select>
             </div>
         </div>
@@ -129,8 +130,19 @@
             </div>
         </div>
         <div class="input-container">
-            <label for="sheep-count-input">Enter your answer:</label>
-            <input type="number" id="sheep-count-input" placeholder="Type your answer here">
+            <label for="sheep-count-select">Select your answer:</label>
+            <select id="sheep-count-select" data-answer="9">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
         </div>
     </div>
 
@@ -140,10 +152,22 @@
         <p>Sort the images in the correct order of the lunar phases:</p>
         <div class="sortable-container">
             <ul class="sortable">
-                <li class="sortable-item" data-phase="1">New Moon</li>
-                <li class="sortable-item" data-phase="2">First Quarter</li>
-                <li class="sortable-item" data-phase="3">Full Moon</li>
-                <li class="sortable-item" data-phase="4">Last Quarter</li>
+                <li class="sortable-item" data-phase="1">
+                    <img src="Images/newmoon.jpg" alt="New Moon" class="moon-phase">
+                    New Moon
+                </li>
+                <li class="sortable-item" data-phase="2">
+                    <img src="Images/firstquarter.jpg" alt="First Quarter" class="moon-phase">
+                    First Quarter
+                </li>
+                <li class="sortable-item" data-phase="3">
+                    <img src="Images/fullmoon.jpg" alt="Full Moon" class="moon-phase">
+                    Full Moon
+                </li>
+                <li class="sortable-item" data-phase="4">
+                    <img src="Images/lastquarter.png" alt="Last Quarter" class="moon-phase">
+                    Last Quarter
+                </li>
             </ul>
         </div>
     </div>
@@ -152,11 +176,18 @@
     <div class="section" id="section-fill-blank">
         <h2>Fill in the Blank</h2>
         <p>Complete the sentences with the correct words:</p>
-        <p>The sun is a _____.</p>
-        <input type="text" id="fill-blank-1" placeholder="Type your answer here" data-answer="star">
 
-        <p>What is 5 + 3? _</p>
-        <input type="text" id="fill-blank-2" placeholder="Type your answer here" data-answer="8">
+        <p>The sun is a <span class="blank-container blank-container-5">
+            <input type="text" id="fill-blank-1" class="blank" placeholder="_____ " data-answer="star">
+        </span>.</p>
+        <span class="clue">Hint: A bright object in the sky that gives us light and heat (5 letters)</span>
+        <span id="result-1" class="result"></span>
+
+        <p>What is 5 + 3? <span class="blank-container blank-container-1">
+            <input type="text" id="fill-blank-2" class="blank" placeholder="_" data-answer="8">
+        </span>.</p>
+        <span class="clue">Hint: Result of adding 5 and 3 together (1 number)</span>
+        <span id="result-2" class="result"></span>
     </div>
 
     <!-- Trivia Section -->

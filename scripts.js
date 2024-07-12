@@ -154,3 +154,4 @@ function resetForm() {
     // Remove incomplete highlight
     $("#section-sort").removeClass("incomplete");
 }
+
