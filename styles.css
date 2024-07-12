@@ -1,4 +1,4 @@
-/* styles.css */
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 @font-face {
@@ -6,7 +6,7 @@
     src: url("Font/kiddos.ttf");
 }
 
-/* navigation bar */
+/* Navigation Bar */
 
 body {
     font-family: "Patrick Hand", cursive;
@@ -67,7 +67,7 @@ body {
 
 /* others */
 
-/* personal information section */
+/* Personal Information section */
 .input-container {
     margin-bottom: 15px;
 }
@@ -109,6 +109,7 @@ body {
     font-size: 1.1em;
 }
 
+/* Planet section */
 .planets-container, .animals-container, .resize-container, .sortable-container, .animals-sound-container {
     display: flex;
     justify-content: center;
@@ -122,6 +123,7 @@ body {
     color: #888; 
 }
 
+/* Animal section */
 .planet, .animal, .animal-sound {
     width: 100px;
     height: 100px;
@@ -143,6 +145,8 @@ body {
     background: #c8e6c9;
     border: 2px solid #F2CA70;
 }
+
+/* Moon section */
 
 .resize img {
     border: 2px solid #F2CA70;
@@ -182,6 +186,8 @@ body {
     border: 2px solid #F2CA70;
 }
 
+/* Date section */
+
 #datepicker {
     display: block;
     margin: 0 auto;
@@ -192,6 +198,8 @@ body {
     text-align: center;
     background: rgb(255, 255, 255);
 }
+
+/* Submit section */
 
 .submit-section {
     text-align: center;
@@ -223,7 +231,7 @@ body {
     color: white;
 }
 
-/* CSS for Sheep Section */
+/* Sheep Section */
 #section-resize {
     display: flex;
     flex-direction: column;
@@ -276,8 +284,6 @@ body {
 .box.selected {
     background-color: #F2B84D;
 }
-
-
 
 #section-sort {
     display: flex;
@@ -372,7 +378,7 @@ body {
     margin-right: 5px;
 }
 
-/* Modal Styles */
+/* Certificate sound */
 .modal {
     display: none; 
     position: fixed; 
@@ -461,7 +467,7 @@ body {
     font-size: 15px;
 }
 
-/* Existing CSS styles */
+/* Fill in the blank */
 #section-fill-blank {
     text-align: center;
 }
