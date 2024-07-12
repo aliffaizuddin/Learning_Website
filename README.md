@@ -17,8 +17,8 @@ Welcome to the Kids e-Learining Platform! Explore interactive activities to enha
 - Misya Syafiqah Binti Mohd Safian (A21EC0199)
 - Nor Alya Binti Mohamad Nor (A21EC0105)
 
+## Run our program:
 
-## How to run our program:
 1. Allow Apache on XAMPP Control Panel
 2. Details of the pages:
    Home Page - index1.html
@@ -27,4 +27,3 @@ Welcome to the Kids e-Learining Platform! Explore interactive activities to enha
    Forum Discussion Page - forum.html
    Content Sharing Page - content.html & content2.html
    Book Link Page - resources.html
-   
