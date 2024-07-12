@@ -189,12 +189,11 @@
             { title: 'Barbie Mariposa and Her Butterfly Fairy Friends', author: 'Golden Books', link: 'https://www.example.com/mariposa' }
         ];
 
-        // Display predefined book suggestions on page load
         window.onload = function() {
             var bookLinksContainer = document.getElementById('bookLinksContainer');
             var noResults = document.getElementById('noResults');
-            displayPredefinedBooks(fairyTaleBooks); // Display fairy tale books by default
-            noResults.style.display = 'none'; // Hide no results message initially
+            displayPredefinedBooks(fairyTaleBooks); 
+            noResults.style.display = 'none'; 
         };
 
         // Function to display predefined book suggestions
@@ -222,7 +221,6 @@
             var noResults = document.getElementById('noResults');
             var apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + input + '+subject:children';
 
-            // Predefined book suggestions based on specific keywords or categories
             if (input.includes('fairy tale')) {
                 bookLinksContainer.innerHTML = ''; // Clear previous results
                 displayPredefinedBooks(fairyTaleBooks);

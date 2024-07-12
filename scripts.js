@@ -66,7 +66,7 @@ function submitAnswers() {
     // Check Resizable Images
     $(".resizable").each(function() {
         var width = $(this).width();
-        if (width === 200) { // Assuming correct width
+        if (width === 200) { 
             correctAnswers++;
         }
     });
@@ -80,17 +80,9 @@ function submitAnswers() {
     if (JSON.stringify(sortedItems) === JSON.stringify(correctOrder)) {
         correctAnswers++;
     } else {
-        // Highlight incomplete section
         $("#section-sort").addClass("incomplete");
     }
 
-    // Check Periodic Table Quiz
-    $(".element").each(function() {
-        var symbol = $(this).data("symbol");
-        if (symbol === "H") { // Replace with dynamic check
-            correctAnswers++;
-        }
-    });
 
     // Check Fill in the Blanks
     var fillBlank1 = $("#fill-blank-1").val().trim().toLowerCase();
