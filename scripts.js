@@ -147,3 +147,12 @@ function resetForm() {
     $("#section-sort").removeClass("incomplete");
 }
 
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('click', function() {
+        document.querySelectorAll('.box').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('sheep-count-select').value = this.getAttribute('data-value');
+    });
+});
+
+

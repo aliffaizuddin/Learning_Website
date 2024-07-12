@@ -120,25 +120,26 @@
         </div>
     </div>
 
-    <!-- Sheep Section -->
-    <div class="section" id="section-resize">
-        <h2>Count the Sheep in the Picture</h2>
-        <p>Count how many sheep are in the image:</p>
-        <div class="resize-container">
-            <div class="resize">
-                <img src="Images/sheep_field.png" alt="Sheep Field" class="resizable" width="400" height="300" data-sheep-count="9">
-            </div>
-        </div>
-        <div class="input-container">
-            <label for="sheep-count-select">Select your answer:</label>
-            <select id="sheep-count-select" data-answer="9">
-                <option value="3">3</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
+<!-- Sheep Section -->
+<div class="section" id="section-resize">
+    <h2>Count the Sheep in the Picture</h2>
+    <p>Count how many sheep are in the image:</p>
+    <div class="resize-container">
+        <div class="resize">
+            <img src="Images/sheep_field.png" alt="Sheep Field" class="resizable" width="400" height="300" data-sheep-count="9">
         </div>
     </div>
+    <div class="input-container">
+        <p>Select your answer:</p>
+        <div class="box-container">
+            <div class="box" data-value="3">3</div>
+            <div class="box" data-value="6">6</div>
+            <div class="box" data-value="8">8</div>
+            <div class="box" data-value="9">9</div>
+        </div>
+        <input type="hidden" id="sheep-count-select" data-answer="9">
+    </div>
+</div>
 
     <!-- Lunar Phases Section -->
     <div class="section" id="section-sort">

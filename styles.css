@@ -228,22 +228,56 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+}
+
+#section-resize h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 #section-resize p {
     text-align: center;
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
-#section-resize select {
-    font-family: "Patrick Hand", cursive;
-    width: 60%;
-    padding: 10px;
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     margin: 10px 0;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
     border: 2px solid #F2CA70;
     border-radius: 8px;
-    font-size: 1em;
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.5em;
+    color: #888; 
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, border-color 0.3s;
 }
+
+.box:hover {
+    background-color: #F2B84D;
+    border-color: #F2B84D;
+}
+
+.box.selected {
+    background-color: #F2B84D;
+}
+
+
 
 #section-sort {
     display: flex;
