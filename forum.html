@@ -146,20 +146,14 @@
         }
     </style>
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
 <body>
     <div id="navbar">
-<<<<<<< HEAD
 
-
-=======
         <a href="resources.html">Book Link</a>
->>>>>>> 0b7fcea8adec181dc0ea6ea370c0acc5a864f8de
         <a href="content.html">Content Sharing</a>
         <a class="active" href="forum.html">Forum Discussion</a>
         <a href="resources.html">Book Link</a>
@@ -189,7 +183,7 @@
     </div>
 
     <script>
-        // Your web app's Firebase configuration
+        
         const firebaseConfig = {
             apiKey: "AIzaSyAJwB0Q6_5ZmLo3y6R06A0SvZ5TZF-xEZo",
             authDomain: "learningwebsite-81d00.firebaseapp.com",
@@ -201,42 +195,59 @@
             measurementId: "G-V87XN3BFN0"
         };
 
-         // Initialize Firebase
          firebase.initializeApp(firebaseConfig);
 
-function submitOpinion() {
-    var opinion = document.getElementById("opinion-input").value;
-    if (opinion.trim() === "") {
-        alert("Please enter your opinion.");
-        return;
-    }
+         // List of inappropriate words and phrases
+        const inappropriateWords = [
+            "badword1", "badword2", "badword3", 
+            "stupid", "idiot", "hate", "dumb", 
+            "not for kids", "irrelevant", "boring" 
+        ];
 
-    // Reference to your Firebase Realtime Database
-    var database = firebase.database();
-    
-    // Push new opinion to the database
-    database.ref('opinions/').push({
-        opinion: opinion
-    }).then(function() {
-        console.log("Opinion successfully submitted to Firebase");
-        
-        // Clear input after submission
-        document.getElementById("opinion-input").value = "";
-    }).catch(function(error) {
-        console.error("Error writing new opinion to Firebase Database", error);
-    });
-}
+        function containsInappropriateWords(opinion) {
+            const words = opinion.split(" ");
+            for (let i = 0; i < words.length; i++) {
+                if (inappropriateWords.includes(words[i].toLowerCase())) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-// Listen for changes in the 'opinions' node
-firebase.database().ref('opinions/').on('child_added', function(snapshot) {
-    var opinion = snapshot.val().opinion;
-    var opinionItem = document.createElement("div");
-    opinionItem.classList.add("opinion");
-    opinionItem.innerHTML = "<p>" + opinion + "</p>";
+        function submitOpinion() {
+            var opinion = document.getElementById("opinion-input").value;
+            if (opinion.trim() === "") {
+                alert("Please enter your opinion.");
+                return;
+            }
 
-    var opinionList = document.getElementById("opinion-list");
-    opinionList.appendChild(opinionItem);
-});
+            if (containsInappropriateWords(opinion)) {
+                alert("Your opinion contains inappropriate words or phrases. Please remove them and try again.");
+                return;
+            }
+
+            var database = firebase.database();
+            
+            database.ref('opinions/').push({
+                opinion: opinion
+            }).then(function() {
+                console.log("Opinion successfully submitted to Firebase");
+                
+                document.getElementById("opinion-input").value = "";
+            }).catch(function(error) {
+                console.error("Error writing new opinion to Firebase Database", error);
+            });
+        }
+
+        // Listen for changes in the 'opinions' node
+        firebase.database().ref('opinions/').on('child_added', function(snapshot) {
+            var opinion = snapshot.val().opinion;
+            var opinionItem = document.createElement("div");
+            opinionItem.className = "opinion";
+            opinionItem.textContent = opinion;
+            var opinionList = document.getElementById("opinion-list");
+            opinionList.appendChild(opinionItem);
+        });
     </script>
 </body>
 </html>
